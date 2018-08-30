@@ -22,6 +22,7 @@ export default class AnswerForm extends React.Component {
   render() {
 
     return (
+      <div className="container-fluide">
         <form onSubmit={this.onFormSubmit}>
             <div className="form-row align-items-center">
             <div className="col-auto">
@@ -35,6 +36,7 @@ export default class AnswerForm extends React.Component {
             </div>
             </div>
         </form>
+      </div>
     );
   }
 }

@@ -55,7 +55,7 @@ export default class AppG extends React.Component {
       return (
       <div>
         <Wellcome>
-          <GameSelector onSelect={this.onSelect} activeGame={this.state.activeGame} />         
+          <GameSelector onSelect={this.onSelect} activeGame={this.state.activeGame} />      
         </Wellcome>
         <Game {...gameInfo}  />
         <AnswerForm onAnswerSubmit={this.onAnswerSubmit} />

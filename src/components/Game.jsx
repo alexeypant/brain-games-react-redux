@@ -4,6 +4,7 @@ export default class Game extends React.Component {
 
   render() {
     return (
+    <div className="container-fluide">
     <div className="card">
         <div className="card-header">
           {this.props.gameName}
@@ -12,6 +13,7 @@ export default class Game extends React.Component {
             <h5 className="card-title">{this.props.gameDescription}</h5>
             <p className="card-text">{this.props.question}</p>
         </div>
+    </div>
     </div>
     );
   }
