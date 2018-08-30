@@ -1,21 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import reducers from './reducers';
-import AppContainer from './containers/App';
+import AppG from './components/AppG';
 
-const store = createStore(
-    reducers,
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+
 
 ReactDOM.render(
-    <Provider store={store}>
-      <AppContainer />
-    </Provider>,
-    document.getElementById('root'),
-  );
-
+  <AppG />,
+  document.getElementById('root'),
+);
