@@ -6,10 +6,12 @@ export default class Result extends React.Component {
     const { result } = this.props;
     return (
         result !== 'requesting' ? 
+        <div className="container">
         <div className="card">
             <div className="card-header">
                 {result === 'right' ? 'Very good' : 'The answer is wrong...' }
             </div>
+        </div>
         </div> : null
     );
   }

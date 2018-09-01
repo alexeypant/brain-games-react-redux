@@ -11,6 +11,11 @@ export default class AnswerForm extends React.Component {
     });
   }
 
+  onYesNoClick = (e) => {
+    e.preventDefault();
+    this.props.onAnswerSubmit(e.target.value);
+  }
+
   onFormSubmit = (e) => {
     e.preventDefault();
     this.props.onAnswerSubmit(this.state.input);
@@ -19,24 +24,64 @@ export default class AnswerForm extends React.Component {
     });
   }
 
-  render() {
+  onGenerateNewQuestion = (e) => {
+    e.preventDefault();
+    this.props.generateNewQuestion();
+  }
 
+  renderYesNoForm(){
     return (
-      <div className="container-fluide">
-        <form onSubmit={this.onFormSubmit}>
-            <div className="form-row align-items-center">
-            <div className="col-auto">
-                <input type="text" 
-                onChange={this.onInputChange}
-                value={this.state.input}
-                placeholder="You answer" />
-            </div>    
-            <div className="col-auto">
-                <button type="submit" className="btn btn-primary mb-2">Submit</button>
-            </div>
-            </div>
-        </form>
+      <div>
+        <div className="row input-group-append">
+          <button className="col-6 btn btn-outline-primary" 
+              onClick={this.onYesNoClick} 
+              value="yes"
+              type="button">YES</button>
+          <button className="col-6 btn btn-outline-primary" 
+              onClick={this.onYesNoClick} 
+              value="no"
+              type="button">NO</button>
+        </div>
+        <div className="row input-group-append">
+          <button className="col-12 btn btn-outline-secondary" 
+                onClick={this.onGenerateNewQuestion}
+                type="button">Generate new question</button>
+        </div>
       </div>
+    );
+  }
+
+  
+  renderInputForm(){
+    return <div className="input-group">
+      <input type="text" 
+        className="form-control" 
+        onChange={this.onInputChange} 
+        value={this.state.input}
+        placeholder="You answer" 
+        aria-label="Recipient's username with two button addons" 
+        aria-describedby="button-addon4" />
+      <div className="input-group-append" id="button-addon4">
+        <button onClick={this.onFormSubmit} 
+          className="btn btn-outline-primary" 
+          type="button">Submit your answer</button>
+        <button className="btn btn-outline-primary" 
+          onClick={this.onGenerateNewQuestion}
+          type="button">Generate new question</button>
+      </div>
+    </div>
+  }
+
+  render() {
+    const { uiState, activeGame } = this.props;
+    return (
+      uiState === 'waitingForAnswer' &&
+      <div className="container">
+        {(activeGame === 'balance' || 
+          activeGame === 'even' || 
+          activeGame === 'prime') ? this.renderYesNoForm() : this.renderInputForm()}
+      </div>
+      
     );
   }
 }

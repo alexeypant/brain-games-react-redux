@@ -8,12 +8,10 @@ const generateProgression = () => {
     }
     return array;
   };
-  
-
 
 export default {
     gameName: 'Progression',
-    gameDescription: 'What number is missing in this progression?',
+    gameDescription: "What number is missing in this progression?",
     question: '',
     correctAnswer: '',
     generateTask(){

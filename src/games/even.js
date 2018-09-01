@@ -1,6 +1,6 @@
 export default {
     gameName: 'Even number',
-    gameDescription: 'Answer "yes" if number even otherwise answer "no".',
+    gameDescription: "Is the following number even?",
     question: '',
     correctAnswer: '',
     generateTask(){

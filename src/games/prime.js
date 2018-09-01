@@ -11,7 +11,7 @@ return true;
 
 export default {
   gameName: 'Prime numbers',
-  gameDescription: 'Is this number prime? Answer "yes" or "no".',
+  gameDescription: "Is this number prime?",
   question: '',
   correctAnswer: '',
   generateTask(){

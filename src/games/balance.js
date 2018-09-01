@@ -1,6 +1,6 @@
 const balance = {
     gameName: 'BALANCE',
-    gameDescription: 'Please answer yes if the number is Balanced',
+    gameDescription: "Please answer if the following number is balanced",
     question: '',
     correctAnswer: '',
     generateTask(){

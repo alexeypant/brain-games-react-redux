@@ -7,7 +7,7 @@ const getGCD = (a, b) => {
 
 export default {
     gameName: 'Greatest Common Divisor',
-    gameDescription: 'Find the greatest common divisor of given numbers.',
+    gameDescription: "Find the greatest common divisor of the given numbers.",
     question: '',
     correctAnswer: '',
     generateTask(){

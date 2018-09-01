@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import AppG from './components/AppG';
+import App from './components/App';
 
 
 
 ReactDOM.render(
-  <AppG />,
+  <App />,
   document.getElementById('root'),
 );

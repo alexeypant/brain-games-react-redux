@@ -1,6 +1,6 @@
 export default {
   gameName: 'Calculation',
-  gameDescription: 'What is the result of the expression?',
+  gameDescription: "What is the result of the expression?",
   question: '',
   correctAnswer: '',
   generateTask(){
