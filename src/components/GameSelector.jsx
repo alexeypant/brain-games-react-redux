@@ -13,7 +13,7 @@ export default class GameSelector extends React.Component {
   render() {
     const { activeGame } = this.props;
     return (
-      <div className="btn-group btn-group-toggle" data-toggle="buttons">
+      <div className="btn-group btn-group-toggle text-center" data-toggle="buttons">
         {this.props.gamesList.map(item => {
           return <label 
             key={item}
