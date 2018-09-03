@@ -82,8 +82,7 @@ export default class Answer extends React.Component {
     return (
       uiState === 'waitingForAnswer' &&
       <div className="container">
-        {(activeGame === 'balance' || 
-          activeGame === 'even' || 
+        {(activeGame === 'even' || 
           activeGame === 'prime') ? this.renderYesNoForm() : this.renderInputForm()}
       </div>
     );

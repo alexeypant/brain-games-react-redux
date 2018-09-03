@@ -12,7 +12,7 @@ export default class Result extends React.Component {
     const isCorrectAnswer = (answer === correctAnswer);
 
     return (
-        uiState === 'showingResult' &&
+      uiState === 'showingResult' &&
         <div className="container">
             <div className="card">
                 <h4 className={`card-header text-center ${isCorrectAnswer ? 'text-success' : 'text-danger'}`}>
@@ -29,8 +29,3 @@ export default class Result extends React.Component {
     );
   }
 }
-
-
-
-
-
