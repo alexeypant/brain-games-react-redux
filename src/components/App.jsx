@@ -28,14 +28,6 @@ export default class App extends React.Component {
     this.props.updateUIState( {uiState: 'waitingForAnswer'} );
   }
 
-  onAnswerSubmit = (answer) => {
-    const correctAnswer = this.games[this.state.activeGame]['correctAnswer'];
-    this.setState({
-      isCorrectAnswer: answer === correctAnswer,
-      uiState: 'showingResult',
-    });
-  }
-
   render() {
     return (
     <div>
