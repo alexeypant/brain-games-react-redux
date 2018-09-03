@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class AnswerForm extends React.Component {
+export default class Answer extends React.Component {
   state = {
     input: '',
   }
@@ -13,12 +13,18 @@ export default class AnswerForm extends React.Component {
 
   onYesNoClick = (e) => {
     e.preventDefault();
-    this.props.onAnswerSubmit(e.target.value);
+    this.props.submitAnswer({ answer: e.target.value });
+    this.props.updateUIState({ uiState: 'showingResult'});
+    this.setState({
+      input: '',
+    });
+
   }
 
   onFormSubmit = (e) => {
     e.preventDefault();
-    this.props.onAnswerSubmit(this.state.input);
+    this.props.submitAnswer({ answer: this.state.input });
+    this.props.updateUIState({ uiState: 'showingResult'});
     this.setState({
       input: '',
     });
@@ -51,7 +57,6 @@ export default class AnswerForm extends React.Component {
     );
   }
 
-  
   renderInputForm(){
     return <div className="input-group">
       <input type="text" 
@@ -81,7 +86,6 @@ export default class AnswerForm extends React.Component {
           activeGame === 'even' || 
           activeGame === 'prime') ? this.renderYesNoForm() : this.renderInputForm()}
       </div>
-      
     );
   }
 }

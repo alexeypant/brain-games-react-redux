@@ -1,21 +1,24 @@
 import React from 'react';
 
-export default class Game extends React.Component {
-
+export default class Task extends React.Component {
+  
   render() {
-    const { uiState } = this.props;
+
+    const { description, question } = this.props.task;
+
     return (
-    uiState === 'waitingForAnswer' &&
+    this.props.uiState === 'waitingForAnswer' &&
     <div className="container">
       <div className="card text-center">
           <div className="card-header">
-            <h4>{this.props.gameDescription}</h4>
+            <h4>{description}</h4>
           </div>
           <div className="card-body">
-              <h5 className="card-title">{this.props.question}</h5>
+              <h5 className="card-title">{question}</h5>
           </div>
       </div>
     </div>
     );
   }
 }
+

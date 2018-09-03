@@ -6,12 +6,10 @@ const getGCD = (a, b) => {
 };
 
 export default {
-    gameName: 'Greatest Common Divisor',
-    gameDescription: "Find the greatest common divisor of the given numbers.",
+    description: "Find the greatest common divisor of the given numbers.",
     question: '',
     correctAnswer: '',
     generateTask(){
-
       let a = 0;
       let b = 0;
       while (a === 0 || b === 0) {
@@ -20,6 +18,11 @@ export default {
       }
       this.question = (`${a} and ${b}`);
       this.correctAnswer = getGCD(a, b).toString();
+      return {
+        description: this.description,
+        question: this.question,
+        correctAnswer: this.correctAnswer,
+      }
     }
   }
 

@@ -15,11 +15,16 @@ export default {
     question: '',
     correctAnswer: '',
     generateTask(){
-        const array = generateProgression();
-        const index = Math.round(Math.random() * 9);
-        this.correctAnswer = array[index];
-        this.correctAnswer = this.correctAnswer.toString();
-        array[index] = '..';
-        this.question = (`${array.join(' ')}`);
+      const array = generateProgression();
+      const index = Math.round(Math.random() * 9);
+      this.correctAnswer = array[index];
+      this.correctAnswer = this.correctAnswer.toString();
+      array[index] = '..';
+      this.question = (`${array.join(' ')}`);
+      return {
+        description: this.description,
+        question: this.question,
+        correctAnswer: this.correctAnswer,
+      }
     }
 }
